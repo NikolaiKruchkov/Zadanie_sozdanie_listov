@@ -1,0 +1,36 @@
+﻿<Window x:Class="SozdanieListov.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SozdanieListov"
+             mc:Ignorable="d" 
+             d:DesignHeight="340" d:DesignWidth="400"
+             Title="Создание листов">
+    <StackPanel>
+        <Label Content="Выберите семейство Title Block"
+               Margin="5"/>
+        <ComboBox ItemsSource="{Binding TypesTitleBlock}"
+                  SelectedValue="{Binding SelectedCTypeTitleBlock}"
+                  DisplayMemberPath="Name"
+                  Margin="5"/>
+        <Label Content="Введите количество создаваемых листов"
+               Margin="5"/>
+        <TextBox Margin="5"
+                 Text="{Binding ListCount}"/>
+        <Label Content="Выберите вид на лист"
+               Margin="5"/>
+        <ComboBox ItemsSource="{Binding Views}"
+                  SelectedValue="{Binding SelectedView}"
+                  DisplayMemberPath="Name"
+                  Margin="5"/>
+        <Label Content="Введите значение параметра DesignedBy"
+               Margin="5"/>
+        <TextBox Margin="5"
+                 Text="{Binding NameDesigned}"/>
+
+        <Button Content="Создать листы"
+                Margin="5"
+                Command="{Binding SaveCommand}"/>
+    </StackPanel>
+</Window>
